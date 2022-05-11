@@ -1,0 +1,27 @@
+site_name: tests
+theme:
+  name: 'material'
+  palette:
+   scheme: 'slate'
+   primary: 'lime'
+   accent: 'lime'
+  font:
+    text: 'Ubuntu'
+    code: 'Ubuntu Mono'
+markdown_extensions:
+#    - markdown_include.include:
+#        base_path: docs
+#        inheritHeadingDepth: True
+    - codehilite:
+        guess_lang: False
+        use_pygments: True
+        pygments_style: 'monokai'
+        linenums: true
+    - footnotes
+    - meta
+    - toc:
+        separator: "_"
+    - admonition
+    - pymdownx.superfences
+    - pymdownx.tabbed
+    - pymdownx.mark
