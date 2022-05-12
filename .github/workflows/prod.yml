@@ -1,0 +1,24 @@
+name: 'build'
+
+on:
+  push:
+    branches:
+    - main
+  pull_request:
+
+jobs:
+  build:
+    name: 'Build'
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Build:checkout"
+        uses: actions/checkout@v2
+      - name: 'Build:dockerimage'
+        uses: docker/build-push-action@v1
+        with:
+          registry: ghcr.io
+          username: "pavo976"
+          password: ${{ secrets.CR_PAT }}
+          repository: pavo976/notes222
+          tags: latest
+
